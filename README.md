@@ -9,7 +9,7 @@
 
 LongLLM-Extrapolation. Updated daily
 - [Research papers.](#papers)
-- [What is LLM Extrapolation?](#what)
+- [What is LLM Extrapolation (long-context generation)?](https://chat.openai.com/share/7d0dce43-d1d1-4f09-92d7-7a7f6525161b)
 
 
 ---
