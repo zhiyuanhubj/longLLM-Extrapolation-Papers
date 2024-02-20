@@ -1,6 +1,5 @@
 <div align="center"> 
-  
-[![GitHub Repo stars](https://img.shields.io/github/stars/tmgthb/Autonomous-Agents?style=social)](https://github.com/tmgthb/Autonomous-Agents/stargazers) 
+
 [![Twitter Follow]](https://twitter.com/ZhiyuanCS)
 
 </div>  
