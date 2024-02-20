@@ -1,6 +1,6 @@
 <div align="center"> 
 
-[![Twitter Follow]](https://twitter.com/ZhiyuanCS)
+[[Twitter Follow]](https://twitter.com/ZhiyuanCS)
 
 </div>  
 
