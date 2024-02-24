@@ -18,6 +18,7 @@ LongLLM-Extrapolation. Updated daily
 
 <div id="papers"> </div>  
 
+
 #### 18 Feb 2024 
 
 [LongAgent: Scaling Language Models to 128k Context through Multi-Agent Collaboration]
@@ -39,6 +40,11 @@ LongLLM-Extrapolation. Updated daily
 [With Greater Text Comes Greater Necessity: Inference-Time Training Helps Long Text Generation]()
 - Author: Y. Wang, D. Ma, D. Cai
 - TL.DR: The proposed Temp-Lora method enhances long text generation, like novel writing or extensive translations, by embedding context information into a temporary module within the model's parameters, instead of using traditional memory-intensive methods. This innovative approach allows for high-quality text generation with significantly reduced hardware demands. It demonstrated impressive improvements in benchmarks, including lower perplexity and higher BLEU scores, while also cutting down computational costs and speeding up the process. Temp-Lora stands out by being efficient, compatible with existing methods, and effective in handling long texts without permanent changes to the model's structure.
+
+#### 21 Jan 2024 
+[LM-Infinite: Simple On-The-Fly Length Generalization For Large Language Models](https://arxiv.org/abs/2308.16137)
+-Author: Chi Han(University of Illinois Urbana-Champaign), Qifan Wang(Meta), Wenhan Xiong(Meta), Yu Chen(Meta), Heng Ji(UIUC), Sinong Wang(Meta)
+- TL.DR: LM-Infinite introduces a straightforward, efficient approach for enhancing LLMs ability to generate longer texts without the need for additional training. By implementing a Λ-shaped attention mask and setting a distance limit, this method effectively addresses the issue of length generalization failure in LLMs, without requiring parameter updates. It's compatible with models using relative-position encoding, offering significant improvements in fluency and quality of generated text for sequences up to 128k tokens. Moreover, LM-Infinite is computationally light, offering a 2.72x speedup in decoding time. The technique promises a practical solution for extending LLMs' applicability to longer contexts, with code to be shared post-publication.
 
 
 #### 15 Jan 2024
@@ -64,6 +70,8 @@ LongLLM-Extrapolation. Updated daily
 - Author: Jiaheng Liu(Alibaba Group), Zhiqi Bai(Alibaba Group), Yuanxing Zhang(Alibaba Group), Chenchen Zhang(Alibaba Group), Yu Zhang(Alibaba Group), Ge Zhang(University of Waterloo), Jiakai Wang(Alibaba Group), Haoran Que(Alibaba Group), Yukang Chen(The Chinese University of Hong Kong), Wenbo Su(Alibaba Group), Tiezheng Ge(Alibaba Group), Jie Fu(The Hong Kong University of Science and Technology), Wenhu Chen(University of Waterloo), Bo Zheng(Alibaba Group)
 - TL.DR: The paper proposes E^2-LLM, an efficient method for extending the context length of LLMs without the need for long-context training data or high computational costs. By using short training sequences (e.g., 4k tokens) and a single training procedure, E2-LLM enables LLMs to handle various context lengths at inference time efficiently. It incorporates novel augmentation methods based on RoPE (Rotary Position Embeddings) to enhance model robustness to different context lengths. The approach significantly reduces the computational requirements and demonstrates its effectiveness across multiple benchmark datasets for long-context tasks.
 ---
+
+
 
 #### 13 Jan 2024
 
@@ -121,7 +129,11 @@ LongLLM-Extrapolation. Updated daily
 - TL.DR: The paper introduces Positional Skip-wisE (PoSE) training, a novel method for extending the context length of Large Language Models (LLMs) without the need for intensive Full-length fine-tuning. PoSE cleverly simulates longer inputs within a fixed context window by dividing it into chunks and applying distinct skipping bias terms to manipulate each chunk's position indices. This technique allows the model to adapt to any position within the target length efficiently, significantly reducing memory and time costs. The authors successfully extended the LLaMA model to handle 128k tokens using only a 2k training context window and demonstrated PoSE's compatibility with RoPE-based LLMs and position interpolation strategies. This method opens the possibility of scaling LLMs to potentially infinite lengths, bounded only by inference memory constraints.
 ---
 
+#### 31 Aug 2023
 
+[YaRN: Efficient Context Window Extension of Large Language Models](https://arxiv.org/abs/2309.00071)
+- Author: Bowen Peng(Nous Research), Jeffrey Quesnelle(Nous Research), Honglu Fan(EleutherAI, University of Geneva), Enrico Shippole
+- TL.DR: YaRN (Yet another RoPE extensioN) is a new, compute-efficient method that significantly extends the context window of transformer-based language models like LLaMA, with far less computational cost than previous approaches. It enables these models to handle and extrapolate to much longer sequences than they were initially trained on, setting a new standard in context window extension. Additionally, YaRN can go beyond the context limitations of fine-tuning datasets. 
 
 
 #### 26 May 2023
@@ -137,5 +149,11 @@ LongLLM-Extrapolation. Updated daily
 - Author: Cem Anil, Yuhuai Wu, Anders Andreassen, Aitor Lewkowycz, Vedant Misra, Vinay Ramasesh, Ambrose Slone, Guy Gur-Ari, Ethan Dyer, Behnam Neyshabur (Google )
 - TL.DR: This paper explores the ability of transformer-based language models to generalize from short to longer problem instances in reasoning tasks, an important aspect of out-of-distribution generalization. Through empirical studies, the authors find that simply fine-tuning transformers on tasks requiring length generalization leads to significant deficiencies, regardless of the model's size. However, they discover that leveraging the in-context learning capabilities of pretrained large language models, combined with scratchpad prompting (which involves asking the model to outline solution steps before providing the final answer), significantly enhances length generalization capabilities. The study also conducts failure analyses to identify common mistake patterns, suggesting pathways for future improvements in enabling language models to handle longer and more complex problem instances effectively.
 ---
+
+#### 6 Jul 2023
+[Focused Transformer: Contrastive Training for Context Scaling](https://arxiv.org/abs/2307.03170)
+- Author: Szymon Tworkowski(IDEAS NCBR, University of Warsaw), Konrad Staniszewski(IDEAS NCBR, University of Warsaw), Mikołaj Pacek(IDEAS NCBR, University of Warsaw), Yuhuai Wu(xAI), Henryk Michalewski(University of Warsaw, Google DeepMind) Piotr Miło´s(IDEAS NCBR, Institute of Mathematics, Polish Academy of Sciences, deepsense.ai)
+- TL.DR: The Focused Transformer (FoT) addresses the challenge of large language models losing efficiency as external memory scales, by refining the structure of the memory's (key, value) pairs through a contrastive learning-inspired training process. This technique allows for extending the effective context length of models without succumbing to the distraction of irrelevant information. By applying this method to fine-tune existing large-scale models, such as 3B and 7B OpenLLaMA, the enhanced versions, named LongLLaMA, show improved performance on tasks requiring extensive context, managing up to a 256k context length effectively for information retrieval.
+
 
 
