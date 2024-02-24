@@ -14,6 +14,7 @@ LongLLM-Extrapolation. Updated daily
 
 ---
 
+![这是一个示例图片](overview.jpg)
 
 <div id="papers"> </div>  
 
