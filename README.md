@@ -34,6 +34,13 @@ LongLLM-Extrapolation. Updated daily
 - TL.DR: The study explores the effectiveness of continual pretraining for extending the context length of language models to 128K, emphasizing the importance of data engineering in terms of both quantity and quality. It finds that training on 500 million to 5 billion tokens, with a focus on domain balance and avoiding naive length upsampling, enables models to effectively utilize information across extended contexts. This approach, which is both effective and affordable, outperforms existing long-context models and narrows the performance gap with state-of-the-art models like GPT-4 128K.
 ---
 
+#### 21 Jan 2024
+
+[With Greater Text Comes Greater Necessity: Inference-Time Training Helps Long Text Generation]()
+- Author: Y. Wang, D. Ma, D. Cai
+- TL.DR: The proposed Temp-Lora method enhances long text generation, like novel writing or extensive translations, by embedding context information into a temporary module within the model's parameters, instead of using traditional memory-intensive methods. This innovative approach allows for high-quality text generation with significantly reduced hardware demands. It demonstrated impressive improvements in benchmarks, including lower perplexity and higher BLEU scores, while also cutting down computational costs and speeding up the process. Temp-Lora stands out by being efficient, compatible with existing methods, and effective in handling long texts without permanent changes to the model's structure.
+
+
 #### 15 Jan 2024
 
 [The What, Why, and How of Context Length Extension Techniques in Large Language Models -- A Detailed Survey](https://arxiv.org/abs/2401.07872)
