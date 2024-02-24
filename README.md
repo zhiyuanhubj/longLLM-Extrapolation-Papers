@@ -81,13 +81,29 @@ LongLLM-Extrapolation. Updated daily
 - TL.DR: The work introduces SelfExtend, a novel method that leverages existing Large Language Models' (LLMs) inherent capabilities to handle longer contexts than they were trained for, without the need for fine-tuning. SelfExtend utilizes a bi-level attention mechanism—grouped attention for distant token dependencies and neighbor attention for adjacent token relationships—built on the original self-attention mechanism to extend LLMs' context window effortlessly during inference. The approach requires minimal code adjustments and has been proven effective across various benchmarks, enabling LLMs to process longer input sequences efficiently.
 ---
 
+#### 8 Nov 2023
+
+[LongQLoRA: Efficient and Effective Method to Extend Context Length of Large Language Models](https://arxiv.org/abs/2311.04879)
+- Author: Jianxin Yang (Sun Yat-sen University)
+- TL.DR: LongQLoRA is a method designed to extend the context lengths of large language models like LLaMA2 efficiently, using fewer training resources. It integrates Position Interpolation, QLoRA, and the Shift Short Attention mechanism from LongLoRA to effectively increase context lengths from 4096 to up to 12,000 tokens on a single 32GB V100 GPU within just 1000 fine-tuning steps. LongQLoRA shows strong performance on the PG19 and Proofpile datasets, surpassing LongLoRA and closely matching the performance of MPT-7B-8K for context lengths of 8192. It also successfully extends the context length of Vicuna-13B models, demonstrating improved generation quality in both long and short contexts. Ablation studies further explore the impact of LoRA rank, fine-tuning steps, and attention patterns during inference, contributing to our understanding of efficient context extension in language models.
+
+#### 10 Oct 2023
+[LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression](https://arxiv.org/abs/2310.06839)
+- Author: Huiqiang Jiang, Qianhui Wu, Xufang Luo, Dongsheng Li, Chin-Yew Lin, Yuqing Yang, Lili Qiu (Microsoft)
+- TL.DR: LongLLMLingua is a strategy aimed at optimizing large language models (LLMs) for long context scenarios through prompt compression. It addresses the challenges of high computational costs, long latency, and reduced performance by enhancing the models' ability to focus on key information within the prompts. Through evaluations across various applications, including QA, few-shot learning, summarization, and more, LongLLMLingua has been shown to significantly improve performance and reduce both costs and latency. Notably, it achieved a performance increase of up to 17.1% with around four times fewer tokens needed for input in benchmarks like GPT-3.5-Turbo, alongside notable cost savings and speed improvements in processing times.
+
 #### 8 Oct 2023
 
-[Scaling Laws of RoPE-based Extrapolation
-](https://arxiv.org/abs/2310.05209)
+[Scaling Laws of RoPE-based Extrapolation](https://arxiv.org/abs/2310.05209)
 - Author: Xiaoran Liu, Hang Yan, Shuo Zhang, Chenxin An, Xipeng Qiu, Dahua Lin (Fudan University, Shanghai AI lab)
 - TL.DR: This work investigates the extrapolation capabilities of Large Language Models (LLMs) using Rotary Position Embedding (RoPE) and proposes a novel framework, the Scaling Laws of RoPE-based Extrapolation, to improve these capabilities. By adjusting the rotary base value and the context length used in fine-tuning, the authors found significant enhancements in the models' ability to handle much longer texts than seen during training, achieving extrapolation up to 1 million tokens with only 16K training length on LLaMA2 models. This study offers a comprehensive understanding of how RoPE's parameters influence LLMs' extrapolation performance and presents a methodological approach to extend their application range significantly.
 ---
+
+#### 21 Sep 2023
+
+[LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models](https://arxiv.org/abs/2309.12307)
+- Author: Yukang Chen(CUHK), Shengju Qian(CUHK), Haotian Tang(MiT), Xin Lai(CUHK), Zhijian Liu(CUHK), Song Han(MIT, NVIDIA), Jiaya Jia(CUHK)  
+- TL.DR: LongLoRA is a novel fine-tuning method designed to efficiently extend the context sizes of pre-trained large language models (LLMs) without significantly increasing computational costs. It introduces two main improvements: the shifted sparse attention (S2-Attn) mechanism for efficient fine-tuning with sparse local attention, saving computation during the context extension process, and an optimized version of LoRA (Low-Rank Adaptation) that focuses on trainable embeddings and normalization for parameter-efficient fine-tuning. This approach allows for extending the context size of models like Llama2 from standard lengths to up to 100,000 tokens with minimal computational overhead, demonstrating strong performance on various tasks. LongLoRA maintains the original architecture of the models and is compatible with existing techniques, offering a practical solution for enhancing LLMs' ability to handle longer contexts effectively.
 
 
 #### 19 Sep 2023
@@ -113,3 +129,5 @@ LongLLM-Extrapolation. Updated daily
 - Author: Cem Anil, Yuhuai Wu, Anders Andreassen, Aitor Lewkowycz, Vedant Misra, Vinay Ramasesh, Ambrose Slone, Guy Gur-Ari, Ethan Dyer, Behnam Neyshabur (Google )
 - TL.DR: This paper explores the ability of transformer-based language models to generalize from short to longer problem instances in reasoning tasks, an important aspect of out-of-distribution generalization. Through empirical studies, the authors find that simply fine-tuning transformers on tasks requiring length generalization leads to significant deficiencies, regardless of the model's size. However, they discover that leveraging the in-context learning capabilities of pretrained large language models, combined with scratchpad prompting (which involves asking the model to outline solution steps before providing the final answer), significantly enhances length generalization capabilities. The study also conducts failure analyses to identify common mistake patterns, suggesting pathways for future improvements in enabling language models to handle longer and more complex problem instances effectively.
 ---
+
+
