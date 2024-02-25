@@ -165,6 +165,11 @@ LongLLM-Extrapolation. Updated daily
 - TL.DR: This work identifies the failure of Transformers to generalize to sequences of arbitrary length as a problem rooted in positional encodings being out-of-distribution for longer sequences. To address this, the authors introduce a novel randomized positional encoding scheme designed to simulate longer sequence positions, allowing the model to generalize to unseen sequence lengths more effectively. Their extensive evaluation across 6000 models and 15 tasks shows a significant improvement in generalization capabilities, with an average increase of 12.0% in test accuracy for sequences longer than those seen during training.
 ---
 
+#### 25 May 2023
+[Landmark Attention: Random-Access Infinite Context Length for Transformers](https://arxiv.org/abs/2305.16300)
+- Author: Amirkeivan Mohtashami, Martin Jaggi(EPFL)
+- TL.DR: The paper introduces a new method to handle longer contexts in Transformers without sacrificing the random-access flexibility of their attention mechanism. By using "landmark tokens" to represent input blocks, the method enables efficient selection of relevant context directly through the attention mechanism, avoiding the need for separate retrieval systems. This approach allows processing of much longer contexts seamlessly, improving performance and extending context length capacity significantly (e.g., up to 32k tokens for LLaMA 7B), making it competitive with state-of-the-art models like Transformer-XL and GPT-4 but with fewer resources.
+
 #### 11 Jul 2022
 
 [Exploring Length Generalization in Large Language Models](https://arxiv.org/abs/2207.04901) 
@@ -177,6 +182,9 @@ LongLLM-Extrapolation. Updated daily
 - Author: Ofir Press(University of Washington, Facebook AI Research), Noah A. Smith(University of Washington, Allen Institute for AI), Mike Lewis(Facebook AI Research)
 - TL.DR: ALiBi (Attention with Linear Biases) introduces a novel and efficient approach for enabling transformer models to handle longer sequence extrapolation than seen during training, without adding positional embeddings to word embeddings. Instead, ALiBi biases attention scores based on the distance between tokens, allowing a model trained on sequences of length 1024 to effectively manage sequences up to 2048. This method not only trains faster and uses less memory compared to traditional sinusoidal position embeddings but also outperforms other position methods on benchmarks like WikiText-103 due to its inductive bias towards more recent information.
 
-
+#### 20 Apr 2021
+[RoFormer: Enhanced Transformer with Rotary Position Embedding](https://arxiv.org/abs/2104.09864)
+- Author: Jianlin Su, Yu Lu, Shengfeng Pan, Ahmed Murtadha, Bo Wen, Yunfeng Liu(Zhuiyi Technology Co., Ltd.)
+- TL.DR: The paper explores different methods of incorporating positional information into transformer-based models and introduces a new technique called Rotary Position Embedding (RoPE). RoPE uniquely combines rotation matrices to encode absolute positions with the ability to capture explicit relative position dependencies within the self-attention mechanism. This approach offers advantages like adaptability to various sequence lengths, diminishing dependency between tokens as their relative distance increases, and enhancing linear self-attention models with relative positioning capabilities. The improved transformer model, dubbed RoFormer, is tested across several long text classification benchmarks, showing superior performance compared to existing methods. The paper also provides theoretical insights to explain these experimental findings.
 
 
