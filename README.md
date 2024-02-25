@@ -113,7 +113,11 @@ LongLLM-Extrapolation. Updated daily
 [Scaling Laws of RoPE-based Extrapolation](https://arxiv.org/abs/2310.05209)
 - Author: Xiaoran Liu, Hang Yan, Shuo Zhang, Chenxin An, Xipeng Qiu, Dahua Lin (Fudan University, Shanghai AI lab)
 - TL.DR: This work investigates the extrapolation capabilities of Large Language Models (LLMs) using Rotary Position Embedding (RoPE) and proposes a novel framework, the Scaling Laws of RoPE-based Extrapolation, to improve these capabilities. By adjusting the rotary base value and the context length used in fine-tuning, the authors found significant enhancements in the models' ability to handle much longer texts than seen during training, achieving extrapolation up to 1 million tokens with only 16K training length on LLaMA2 models. This study offers a comprehensive understanding of how RoPE's parameters influence LLMs' extrapolation performance and presents a methodological approach to extend their application range significantly.
----
+
+#### 15 Nov 2023
+[Think-in-Memory: Recalling and Post-thinking Enable LLMs with Long-Term Memory]()
+- Authors: Lei Liu, Xiaoyan Yang, Yue Shen, Binbin Hu, Zhiqiang Zhang, Jinjie Gu, Guannan Zhang(Ant Group)
+- TL.DR: The TiM (Think-in-Memory) mechanism enhances LLMs for long-term interactions by introducing a novel memory system that stores and updates historical thoughts, avoiding the common problem of biased or inconsistent reasoning with repeated recall. TiM works by recalling relevant past thoughts before response generation and updating memory with new insights after, using principles like insert, forget, and merge for dynamic memory management. Additionally, it incorporates Locality-Sensitive Hashing for efficient long-term conversation retrieval. Tests on real and simulated dialogues show that TiM significantly improves LLMs' response quality in prolonged interactions.
 
 #### 21 Sep 2023
 
@@ -135,6 +139,16 @@ LongLLM-Extrapolation. Updated daily
 - Author: Bowen Peng(Nous Research), Jeffrey Quesnelle(Nous Research), Honglu Fan(EleutherAI, University of Geneva), Enrico Shippole
 - TL.DR: YaRN (Yet another RoPE extensioN) is a new, compute-efficient method that significantly extends the context window of transformer-based language models like LLaMA, with far less computational cost than previous approaches. It enables these models to handle and extrapolate to much longer sequences than they were initially trained on, setting a new standard in context window extension. Additionally, YaRN can go beyond the context limitations of fine-tuning datasets. 
 
+#### 6 Jul 2023
+[Focused Transformer: Contrastive Training for Context Scaling](https://arxiv.org/abs/2307.03170)
+- Author: Szymon Tworkowski(IDEAS NCBR, University of Warsaw), Konrad Staniszewski(IDEAS NCBR, University of Warsaw), Mikołaj Pacek(IDEAS NCBR, University of Warsaw), Yuhuai Wu(xAI), Henryk Michalewski(University of Warsaw, Google DeepMind) Piotr Miło´s(IDEAS NCBR, Institute of Mathematics, Polish Academy of Sciences, deepsense.ai)
+- TL.DR: The Focused Transformer (FoT) addresses the challenge of large language models losing efficiency as external memory scales, by refining the structure of the memory's (key, value) pairs through a contrastive learning-inspired training process. This technique allows for extending the effective context length of models without succumbing to the distraction of irrelevant information. By applying this method to fine-tune existing large-scale models, such as 3B and 7B OpenLLaMA, the enhanced versions, named LongLLaMA, show improved performance on tasks requiring extensive context, managing up to a 256k context length effectively for information retrieval.
+
+
+#### 27 Jun 2023
+[Extending Context Window of Large Language Models via Positional Interpolation](https://arxiv.org/abs/2306.15595)
+- Author: Shouyuan Chen, Sherman Wong, Liangjian Chen, Yuandong Tian(Meta)
+- TL.DR: We present Position Interpolation (PI) that extends the context window sizes of RoPE-based pretrained LLMs such as LLaMA models to up to 32768 with minimal fine-tuning (within 1000 steps), while demonstrating strong empirical results on various tasks that require long context, including passkey retrieval, language modeling, and long document summarization from LLaMA 7B to 65B. Meanwhile, the extended model by Position Interpolation preserve quality relatively well on tasks within its original context window. To achieve this goal, Position Interpolation linearly down-scales the input position indices to match the original context window size, rather than extrapolating beyond the trained context length which may lead to catastrophically high attention scores that completely ruin the self-attention mechanism. Our theoretical study shows that the upper bound of interpolation is at least ∼600× smaller than that of extrapolation, further demonstrating its stability. Models extended via Position Interpolation retain its original architecture and can reuse most pre-existing optimization and infrastructure.
 
 #### 26 May 2023
 
@@ -150,10 +164,11 @@ LongLLM-Extrapolation. Updated daily
 - TL.DR: This paper explores the ability of transformer-based language models to generalize from short to longer problem instances in reasoning tasks, an important aspect of out-of-distribution generalization. Through empirical studies, the authors find that simply fine-tuning transformers on tasks requiring length generalization leads to significant deficiencies, regardless of the model's size. However, they discover that leveraging the in-context learning capabilities of pretrained large language models, combined with scratchpad prompting (which involves asking the model to outline solution steps before providing the final answer), significantly enhances length generalization capabilities. The study also conducts failure analyses to identify common mistake patterns, suggesting pathways for future improvements in enabling language models to handle longer and more complex problem instances effectively.
 ---
 
-#### 6 Jul 2023
-[Focused Transformer: Contrastive Training for Context Scaling](https://arxiv.org/abs/2307.03170)
-- Author: Szymon Tworkowski(IDEAS NCBR, University of Warsaw), Konrad Staniszewski(IDEAS NCBR, University of Warsaw), Mikołaj Pacek(IDEAS NCBR, University of Warsaw), Yuhuai Wu(xAI), Henryk Michalewski(University of Warsaw, Google DeepMind) Piotr Miło´s(IDEAS NCBR, Institute of Mathematics, Polish Academy of Sciences, deepsense.ai)
-- TL.DR: The Focused Transformer (FoT) addresses the challenge of large language models losing efficiency as external memory scales, by refining the structure of the memory's (key, value) pairs through a contrastive learning-inspired training process. This technique allows for extending the effective context length of models without succumbing to the distraction of irrelevant information. By applying this method to fine-tune existing large-scale models, such as 3B and 7B OpenLLaMA, the enhanced versions, named LongLLaMA, show improved performance on tasks requiring extensive context, managing up to a 256k context length effectively for information retrieval.
+#### 27 Aug 2021
+[Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation](https://arxiv.org/abs/2108.12409)
+- Author: Ofir Press(University of Washington, Facebook AI Research), Noah A. Smith(University of Washington, Allen Institute for AI), Mike Lewis(Facebook AI Research)
+- TL.DR: ALiBi (Attention with Linear Biases) introduces a novel and efficient approach for enabling transformer models to handle longer sequence extrapolation than seen during training, without adding positional embeddings to word embeddings. Instead, ALiBi biases attention scores based on the distance between tokens, allowing a model trained on sequences of length 1024 to effectively manage sequences up to 2048. This method not only trains faster and uses less memory compared to traditional sinusoidal position embeddings but also outperforms other position methods on benchmarks like WikiText-103 due to its inductive bias towards more recent information.
+
 
 
 
