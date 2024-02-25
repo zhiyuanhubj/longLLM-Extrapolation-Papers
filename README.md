@@ -19,6 +19,8 @@ LongLLM-Extrapolation. Updated daily
 <div id="papers"> </div>  
 
 
+
+
 #### 18 Feb 2024 
 
 [LongAgent: Scaling Language Models to 128k Context through Multi-Agent Collaboration]
@@ -113,6 +115,12 @@ LongLLM-Extrapolation. Updated daily
 [Scaling Laws of RoPE-based Extrapolation](https://arxiv.org/abs/2310.05209)
 - Author: Xiaoran Liu, Hang Yan, Shuo Zhang, Chenxin An, Xipeng Qiu, Dahua Lin (Fudan University, Shanghai AI lab)
 - TL.DR: This work investigates the extrapolation capabilities of Large Language Models (LLMs) using Rotary Position Embedding (RoPE) and proposes a novel framework, the Scaling Laws of RoPE-based Extrapolation, to improve these capabilities. By adjusting the rotary base value and the context length used in fine-tuning, the authors found significant enhancements in the models' ability to handle much longer texts than seen during training, achieving extrapolation up to 1 million tokens with only 16K training length on LLaMA2 models. This study offers a comprehensive understanding of how RoPE's parameters influence LLMs' extrapolation performance and presents a methodological approach to extend their application range significantly.
+
+#### 1 Oct 2023
+[GrowLength: Accelerating LLMs Pretraining by Progressively Growing Training Length](https://arxiv.org/abs/2310.00576)
+- Hongye Jin(Texas A&M University), Xiaotian Han(Texas A&M University), Jingfeng Yang(Amazon), Zhimeng Jiang(Texas A&M University), Chia-Yuan Chang(Texas A&M University), Xia Hu(Rice University)
+- TL.DR: The paper introduces "GrowLength," a method to speed up the pretraining of LLMs by starting with short sequence lengths (128 tokens) and gradually increasing to longer ones (up to 4096 tokens). This strategy reduces computational costs and improves efficiency, allowing models to handle more tokens quickly and perform better. The method is simple, effective, and doesn't need extra engineering, offering a practical solution for faster and more efficient pretraining of LLMs.
+
 
 #### 15 Nov 2023
 [Think-in-Memory: Recalling and Post-thinking Enable LLMs with Long-Term Memory]()
