@@ -79,16 +79,17 @@ LongLLM-Extrapolation. Updated daily
 
 [Extending LLMs' Context Window with 100 Samples](https://arxiv.org/abs/2401.07004)
 
-- Author: 
-- TL.DR: 
+- Author: Yikai Zhang(Shanghai Jiao Tong University, Shanghai Artificial Intelligence Lab, GAIR), Junlong Li(Shanghai Jiao Tong University, GAIR), Pengfei Liu(Shanghai Jiao Tong University, Shanghai Artificial Intelligence Lab, GAIR)
+- TL.DR: The paper explored the distribution of attention score in different layers in LLMs in an entropy perspective, found that the attention entropy of foremost layer presenting a trend of uniform ascent. And proposed entropy-aware ABF (EABF) to mantain stable attention entropy in layers. In EABF, a scaling factor conduct to the product of QK in each layer expect the first two, and only the part that exceeds the training length is scaled. This method introduced only 100 samples into fine-tuning, and performed the best on their downstream tasks in the context size of 32k.
+
 ---
 
 #### 7 Jan 2024
 
 [Infinite-LLM: Efficient LLM Service for Long Context with DistAttention and Distributed KVCache](https://arxiv.org/abs/2401.02669) [Code]()
 
-- Author: 
-- TL.DR: 
+- Author: Bin Lin*(Alibaba Group), Tao Peng*(Alibaba Group), Chen Zhang*(Shanghai Jiao Tong University), Minmin Sun(Alibaba Group), Lanbo Li(Alibaba Group), Hanyu Zhao(Alibaba Group), Wencong Xiao(Alibaba Group), Qi Xu(Alibaba Group), Xiafei Qiu(Alibaba Group), Shen Li(Alibaba Group), Zhigang Ji(Shanghai Jiao Tong University), Yong Li(Alibaba Group), Wei Lin(Alibaba Group)
+- TL.DR: The paper aims to address the challenges of resource management in cloud-based LLM service systems, proposing a distributed attention algorithm, DistAttention to decouple of KV Caches’ computation from the standard transformer block, and a distributed LLM service system, DistKV-LLM. DistAttention partitions KV cache into manageable units, achieving distributed processing and storage of the attention module. DistKV-LLM dynamically manages the KV Cache and efficiently orchestrates all accessible GPU and CPU memory across data centers, thus enabling high-performance LLM services adaptable to a wide range of context lengths. It is a service support strategy rather than a model length extrapolation strategy.
 ---
 
 
@@ -98,6 +99,11 @@ LongLLM-Extrapolation. Updated daily
 - Author: Hongye Jin(Texas A&M University), Xiaotian Han(Texas A&M University), Jingfeng Yang(Amazon), Zhimeng Jiang(Texas A&M University), Zirui Liu(Rice University), Chia-Yuan Chang(Texas A&M University), Huiyuan Chen(Case Western Reserve University), Xia Hu(Rice University)
 - TL.DR: The work introduces SelfExtend, a novel method that leverages existing Large Language Models' (LLMs) inherent capabilities to handle longer contexts than they were trained for, without the need for fine-tuning. SelfExtend utilizes a bi-level attention mechanism—grouped attention for distant token dependencies and neighbor attention for adjacent token relationships—built on the original self-attention mechanism to extend LLMs' context window effortlessly during inference. The approach requires minimal code adjustments and has been proven effective across various benchmarks, enabling LLMs to process longer input sequences efficiently.
 ---
+
+#### 7 Dec 2023
+[Fortify the Shortest Stave in Attention: Enhancing Context Awareness of Large Language Models for Effective Tool Use](https://arxiv.org/abs/2312.04455)
+- Author: Yuhan Chen(Gaoling School of Artificial Intelligence, Renmin University of China), Ang Lv(Gaoling School of Artificial Intelligence, Renmin University of China), Ting-En Lin(Alibaba Group), Changyu Chen(Gaoling School of Artificial Intelligence, Renmin University of China), Yuchuan Wu(Alibaba Group), Fei Huang(Alibaba Group), Yongbin Li(Alibaba Group), Rui Yan(Gaoling School of Artificial Intelligence, Renmin University of China)
+- TL.DR: This paper proposed attention buckets, an method that gathering multiple rope-base parallel processes. The method built on that the prediction logits showing relatively higher as the length adaptation improves among different repo base. A total of six searched rope base were used in the implementation, and they get a improvement on Tool using tasks. Its max token length of tasks is just 4096 but is insightful.
 
 #### 8 Nov 2023
 
@@ -152,6 +158,10 @@ LongLLM-Extrapolation. Updated daily
 - Author: Szymon Tworkowski(IDEAS NCBR, University of Warsaw), Konrad Staniszewski(IDEAS NCBR, University of Warsaw), Mikołaj Pacek(IDEAS NCBR, University of Warsaw), Yuhuai Wu(xAI), Henryk Michalewski(University of Warsaw, Google DeepMind) Piotr Miło´s(IDEAS NCBR, Institute of Mathematics, Polish Academy of Sciences, deepsense.ai)
 - TL.DR: The Focused Transformer (FoT) addresses the challenge of large language models losing efficiency as external memory scales, by refining the structure of the memory's (key, value) pairs through a contrastive learning-inspired training process. This technique allows for extending the effective context length of models without succumbing to the distraction of irrelevant information. By applying this method to fine-tune existing large-scale models, such as 3B and 7B OpenLLaMA, the enhanced versions, named LongLLaMA, show improved performance on tasks requiring extensive context, managing up to a 256k context length effectively for information retrieval.
 
+#### 5 Jul 2023
+[LONGNET: Scaling Transformers to 1,000,000,000 Tokens](http://arxiv.org/abs/2307.02486)
+- Author: Jiayu Ding(Xi’an Jiaotong University), Shuming Ma(Microsoft Research), Li Dong(Microsoft Research), Xingxing Zhang(Microsoft Research), Shaohan Huang(Microsoft Research), Wenhui Wang(Microsoft Research), Nanning Zheng(Xi’an Jiaotong University), Furu Wei(Microsoft Research)
+- TL.DR: This paper proposed LongNet to scaling Transformers to 1B tokens, which is a sparse Transformer method implemented by proposed dilated attention. Dilated attention consists of a series of attention patterns for modeling both short-range and long-range dependency. The number of attention patterns can be extended according to the sequence length. The computational efficiency has been significantly enhanced in this method. However, authors only evaluated its ppl performance on 32k and this approach lacks modeling of global details.
 
 #### 27 Jun 2023
 [Extending Context Window of Large Language Models via Positional Interpolation](https://arxiv.org/abs/2306.15595)
